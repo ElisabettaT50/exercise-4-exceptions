@@ -11,7 +11,7 @@ public class Main {
         handleExceptions(myArray[5], 0);
     }
 
-    public static int handleExceptions(int index, int dividend) {
+    public static void handleExceptions(int index, int dividend) {
         try {
             System.out.println(index / dividend);
         } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
@@ -20,6 +20,5 @@ public class Main {
             // non esegue il blocco di codice dopo il finally, perché?
             System.out.println("Code finally executed");
         }
-        return index / dividend;
     }
 }
