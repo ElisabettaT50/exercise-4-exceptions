@@ -8,19 +8,18 @@ public class Main {
 
     public static void main(String[] args) {
         int[] myArray = {10, 2, 14, 6, 44};
-        handleExceptions(myArray, myArray[5], 0);
+        handleExceptions(myArray[5], 0);
     }
 
-    public static void handleExceptions(int[] array, int index, int dividend) {
+    public static int handleExceptions(int index, int dividend) {
         try {
-            int result = index / dividend;
-            if (dividend == 0);
-        } catch (ArithmeticException ex1) {
-            System.out.println("Type of exception: " + ex1);
-        } catch (ArrayIndexOutOfBoundsException ex2) {
-            System.out.println("Type of exception: " + ex2);
+            System.out.println(index / dividend);
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("Type of exception: " + e);
         } finally {
+            // non esegue il blocco di codice dopo il finally, perché?
             System.out.println("Code finally executed");
         }
+        return index / dividend;
     }
 }
