@@ -8,13 +8,17 @@ public class Main {
 
     public static void main(String[] args) {
         int[] myArray = {10, 2, 14, 6, 44};
-        handleExceptions(myArray[5], 0);
+        handleExceptions(myArray, 0);
     }
 
-    public static void handleExceptions(int index, int dividend) {
+    public static void handleExceptions(int[] arr, int dividend) {
         try {
-            System.out.println(index / dividend);
-        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+            int index = arr[5];
+            int result = index / dividend;
+            System.out.println("result is: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Type of exception: " + e);
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Type of exception: " + e);
         } finally {
             // non esegue il blocco di codice dopo il finally, perché?
